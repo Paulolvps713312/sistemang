@@ -19,10 +19,16 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 import { FormsModule } from '@angular/forms';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { CarrosComponent } from './components/carros/carros.component';
+import { LeilaoComponent } from './component/leilao/leilao.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavBarComponent,
+    CarrosComponent,
+    LeilaoComponent
   ],
   imports: [
     BrowserModule,
