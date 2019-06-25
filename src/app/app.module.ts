@@ -4,14 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { ClienteComponent } from './cliente/cliente.component';
-import { LoginComponent } from './login/login.component';
+import { ClienteComponent } from './components/painel/cliente/cliente.component';
+import { LoginComponent } from './components/login/login.component';
 
-import { AngularFireAuth  } from '@angular/fire/auth';
+import { AngularFireAuth } from '@angular/fire/auth';
 
-import { AuthGuard } from "./guards/auth.guard";
+import { AuthGuard } from './components/guards/auth.guard';
 
-import { LoginService } from "./login/login.service"
+import { LoginService } from './components/login/login.service';
 
 import { environment } from '../environments/environment';
 
@@ -19,15 +19,15 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 import { FormsModule } from '@angular/forms';
-import { NavBarComponent } from './components/nav-bar/nav-bar.component';
-import { CarrosComponent } from './components/carros/carros.component';
-import { LeilaoComponent } from './component/leilao/leilao.component';
+import { NavBarComponent } from './components/navbar/navbar.component';
+import { CarroComponent } from './components/painel/carro/carro.component';
+import { LeilaoComponent } from './components/painel/leilao/leilao.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
-    CarrosComponent,
+    CarroComponent,
     LeilaoComponent
   ],
   imports: [
@@ -37,7 +37,7 @@ import { LeilaoComponent } from './component/leilao/leilao.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     ClienteComponent,
-    LoginComponent    
+    LoginComponent
   ],
   providers: [AuthGuard, LoginService, AngularFireModule, AngularFireAuth],
   bootstrap: [AppComponent]

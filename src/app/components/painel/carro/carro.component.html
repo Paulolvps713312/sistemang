@@ -1,0 +1,46 @@
+<h2>Cadastrar Carros</h2>
+
+<form>
+    <div class="form-group">
+        <label for="id">ID</label>
+        <input type="text" class="form-control" id="key" name="key"
+                placeholder="Digite o ID"
+                [(ngModel)]="carro.key"
+                readonly>
+    </div>  
+    <div class="form-group">
+        <label for="modelo">Modelo</label>
+        <input type="text" class="form-control" id="modelo" name="modelo"
+                placeholder="Digite seu nome"
+                [(ngModel)]="carro.modelo">
+    </div>    
+    <div class="form-group">
+        <label for="ano">Ano</label>
+        <input type="date" class="form-control" id="ano" name="ano"
+        [(ngModel)]="carro.ano">
+    </div>
+    <button class="btn btn-primary" (click)="salvar()">Salvar</button> 
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>    
+            <th>Modelo</th>    
+            <th>Ano</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let carro of carros">
+            <td>{{ carro.key }}</td>
+            <td>{{ carro.modelo }}</td>
+            <td>{{ carro.ano }}</td>
+            <td><button class="btn btn-primary"
+                (click)="carregar(carro)">Alterar</button></td>
+            <td><button class="btn btn-primary"
+                (click)="excluir(carro.key)">Excluir</button></td>
+        </tr>
+    </tbody>
+</table>

@@ -1,22 +1,24 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ClienteComponent } from './cliente/cliente.component'
-import { LoginComponent } from './login/login.component';
-import { AuthGuard} from './guards/auth.guard'
-import { CarrosComponent } from './components/carros/carros.component';
+import { ClienteComponent } from './components/painel/cliente/cliente.component';
+import { LoginComponent } from './components/login/login.component';
+import { AuthGuard } from './components/guards/auth.guard';
+import { CarroComponent } from './components/painel/carro/carro.component';
+import { LeilaoComponent } from './components/painel/leilao/leilao.component';
 
 const routes: Routes = [
 
   // App routes goes here here
-  { 
-    path: 'sistemasdecarros',    
-    canActivate: [AuthGuard], 
+  {
+    path: 'painel',
+    canActivate: [AuthGuard],
     children: [
       { path: 'cliente', component: ClienteComponent},
-      { path: 'carros', component: CarrosComponent},
+      { path: 'carro', component: CarroComponent},
+      { path: 'leilao', component: LeilaoComponent},
     ]
-  },  
-  
+  },
+
   { path: '', component: LoginComponent},
   { path: 'login', component: LoginComponent},
 ];

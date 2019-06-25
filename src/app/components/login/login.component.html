@@ -8,5 +8,5 @@
     <input type="password" class="form-control" id="senha" placeholder="Digite sua senha" name="senha"
       [(ngModel)]="senha">
   </div>
-  <button type="submit" class="btn btn-primary" (click)="logar()">Login</button>
+  <button type="submit" class="btn btn-primary" (click)="logar()" (submit)="logar()">Login</button>
 </form>

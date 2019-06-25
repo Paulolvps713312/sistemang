@@ -1,0 +1,46 @@
+<h2>Cadastrar Eventos de Leilões</h2>
+
+<form>
+    <div class="form-group">
+        <label for="id">ID</label>
+        <input type="text" class="form-control" id="key" name="key"
+                placeholder="Digite o ID"
+                [(ngModel)]="leilao.key"
+                readonly>
+    </div>  
+    <div class="form-group">
+        <label for="data">Data</label>
+        <input type="date" class="form-control" id="data" name="data"
+                placeholder="Digite seu nome"
+                [(ngModel)]="leilao.data">
+    </div>    
+    <div class="form-group">
+        <label for="local">Local</label>
+        <input type="text" class="form-control" id="local" name="local"
+        [(ngModel)]="leilao.local">
+    </div>
+    <button class="btn btn-primary" (click)="salvar()">Salvar</button> 
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>    
+            <th>Data</th>    
+            <th>Local</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let leilao of leiloes">
+            <td>{{ leilao.key }}</td>
+            <td>{{ leilao.data }}</td>
+            <td>{{ leilao.local }}</td>
+            <td><button class="btn btn-primary"
+                (click)="carregar(leilao)">Alterar</button></td>
+            <td><button class="btn btn-primary"
+                (click)="excluir(leilao.key)">Excluir</button></td>
+        </tr>
+    </tbody>
+</table>

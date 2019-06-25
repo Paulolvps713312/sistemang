@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgModule } from '@angular/core';
 import { Leilao } from './leilao.model';
 import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common'
+import { CommonModule } from '@angular/common';
 
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 
@@ -31,6 +31,7 @@ export class LeilaoComponent implements OnInit {
 
     ngOnInit(): void {
         this.leilao = new Leilao();
+        this.listar();
     }
 
     salvar() {
@@ -38,18 +39,46 @@ export class LeilaoComponent implements OnInit {
           this.db.list('leiloes').push(this.leilao)
               .then((result: any) => {
                   console.log(result.key);
-              });            
+              });
       } else {
-          this.db.list('leiloes').update(this.leilao.key,this.leilao)
+          this.db.list('leiloes').update(this.leilao.key, this.leilao)
           .then((result: any) => {
               console.log(result.key);
-          });  
+          });
       }
   }
 
-  carregar(leilao:Leilao) {
+  carregar(leilao: Leilao) {
     this.leilao = new Leilao(leilao.key,
-        leilao.data, leilao.coordenadas);
+        leilao.data, leilao.local);
+  }
+
+  excluir(key: string) {
+    if (confirm('Deseja realmente excluir?')) {
+        this.db.list('leiloes').remove(key)
+            .then((result: any) => {
+                console.log(key);
+            });
+    }
+  }
+
+  listar() {
+    this.getAll().subscribe(
+        leiloes => this.leiloes = leiloes,
+        error => alert(error),
+        () => console.log('terminou')
+      );
+}
+
+  getAll(): Observable<any[]> {
+    return this.db.list('leiloes')
+      .snapshotChanges()
+      .pipe(
+        map(changes => {
+          return changes.map(c => (
+              { key: c.payload.key, ...c.payload.val() }));
+        })
+      );
   }
 
 }
