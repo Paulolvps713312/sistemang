@@ -13,14 +13,13 @@ const routes: Routes = [
     path: 'painel',
     canActivate: [AuthGuard],
     children: [
-      { path: 'cliente', component: ClienteComponent},
-      { path: 'carro', component: CarroComponent},
-      { path: 'leilao', component: LeilaoComponent},
+      { path: 'clientes', component: ClienteComponent},
+      { path: 'carros', component: CarroComponent},
+      { path: 'leiloes', component: LeilaoComponent},
     ]
   },
 
-  { path: '', component: LoginComponent},
-  { path: 'login', component: LoginComponent},
+  { path: 'entrar', component: LoginComponent},
 ];
 
 @NgModule({

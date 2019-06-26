@@ -13,7 +13,6 @@ import { map } from 'rxjs/operators';
 @Component({
     selector: 'app-cliente',
     templateUrl: './cliente.component.html',
-    styleUrls: ['./cliente.component.css']
 })
 
 @NgModule({

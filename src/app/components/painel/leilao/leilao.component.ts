@@ -13,7 +13,6 @@ import { map } from 'rxjs/operators';
 @Component({
   selector: 'app-leilao',
   templateUrl: './leilao.component.html',
-  styleUrls: ['./leilao.component.css']
 })
 
 @NgModule({

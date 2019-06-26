@@ -13,7 +13,6 @@ import { map } from 'rxjs/operators';
 @Component({
   selector: 'app-carro',
   templateUrl: './carro.component.html',
-  styleUrls: ['./carro.component.css']
 })
 
 @NgModule({

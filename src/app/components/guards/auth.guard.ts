@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from "@angular/router";
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 
 import { Observable } from 'rxjs';
 
@@ -12,15 +12,15 @@ export class AuthGuard implements CanActivate {
         route: ActivatedRouteSnapshot,
         state: RouterStateSnapshot): Observable<boolean> | boolean {
 
-        //logic here
-        console.log("VERIFY");
-        console.log(localStorage['token']);
+        // logic here
+        console.log('VERIFY');
+        console.log(localStorage.token);
 
-        if (localStorage['token'] == undefined) {
+        if (localStorage.token === undefined) {
             this.router.navigate(['/login']);
         }
 
-        if (localStorage['token'] != 'null') {
+        if (localStorage.token !== 'null') {
             return true;
         } else {
             this.router.navigate(['/login']);

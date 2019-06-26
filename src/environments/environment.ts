@@ -5,14 +5,14 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyC_v9Fq4grZfPuZSsh0rOrKYGu_oFaFpC0",
-    authDomain: "",
-    databaseURL: "sistemasdecarros.firebaseio.com",
-    projectId: "sistemasdecarros",
-    storageBucket: "",
-    messagingSenderId: ""
+    apiKey: 'AIzaSyA-TyPIGJfiGwWSLuYTvNeSyLzPia2R-dk',
+    authDomain: '',
+    databaseURL: 'positivo-8f686.firebaseio.com',
+    projectId: 'positivo-8f686',
+    storageBucket: '',
+    messagingSenderId: ''
   }
-  
+
 };
 
 /*

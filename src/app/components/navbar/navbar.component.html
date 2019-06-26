@@ -1,43 +1,22 @@
-<nav class="navbar navbar-dark bg-dark">
-  <span class="navbar-brand mb-0 h1">Silas Automóveis</span>
-  <div>
-  <ul class="navbar-nav">
-    <li>
-      <a class="nav-link" href="/">Início</a>
-    </li>
-    <li>
-      <a class="nav-link" href="/login">Entrar</a>
-    </li>
-    <li>
-      <a class="nav-link" href="/painel/carro">Carros</a>
-    </li>
-    <li>
-      <a class="nav-link" href="/painel/cliente">Clientes</a>
-    </li>
-    <li>
-      <a class="nav-link" href="/painel/leilao">Leilões</a>
-    </li>
-  </ul>
-</div>
-</nav>
-
-<!--
-
-<nav class="navbar navbar-dark bg-dark">
-  <a class="navbar-brand">Silas Automóveis</a>
-  <div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" routerLink="/">Silas Automóveis</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="/painel/carros">Carros</a>
+        <a class="nav-link" routerLink="/painel/carros">Cadastro de Carros</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/painel/cliente">Clientes</a>
+        <a class="nav-link" routerLink="/painel/clientes">Cadastro de Clientes</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/painel/leilao">Leilões</a>
+        <a class="nav-link" routerLink="/painel/leiloes">Cadastro de Leilões</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/entrar">Entrar</a>
       </li>
     </ul>
   </div>
 </nav>
-
--->
