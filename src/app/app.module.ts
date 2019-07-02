@@ -22,13 +22,12 @@ import { FormsModule } from '@angular/forms';
 import { NavBarComponent } from './components/navbar/navbar.component';
 import { CarroComponent } from './components/painel/carro/carro.component';
 import { LeilaoComponent } from './components/painel/leilao/leilao.component';
+import { PainelComponent } from './components/painel/painel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
-    CarroComponent,
-    LeilaoComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +35,10 @@ import { LeilaoComponent } from './components/painel/leilao/leilao.component';
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
+    PainelComponent,
+    CarroComponent,
     ClienteComponent,
+    LeilaoComponent,
     LoginComponent
   ],
   providers: [AuthGuard, LoginService, AngularFireModule, AngularFireAuth],
