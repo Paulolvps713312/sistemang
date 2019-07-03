@@ -6,6 +6,7 @@ import { AuthGuard } from './components/guards/auth.guard';
 import { CarroComponent } from './components/painel/carro/carro.component';
 import { LeilaoComponent } from './components/painel/leilao/leilao.component';
 import { PainelComponent } from './components/painel/painel.component';
+import { LandingComponent } from './components/landing/landing.component';
 
 const routes: Routes = [
 
@@ -21,7 +22,8 @@ const routes: Routes = [
     ]
   },
 
-  { path: 'entrar', component: LoginComponent},
+  { path: 'entrar', component: LoginComponent },
+  { path: '', component: LandingComponent },
 ];
 
 @NgModule({

@@ -19,6 +19,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 import { FormsModule } from '@angular/forms';
+import { LandingComponent } from './components/landing/landing.component';
 import { NavBarComponent } from './components/navbar/navbar.component';
 import { CarroComponent } from './components/painel/carro/carro.component';
 import { LeilaoComponent } from './components/painel/leilao/leilao.component';
@@ -28,6 +29,7 @@ import { PainelComponent } from './components/painel/painel.component';
   declarations: [
     AppComponent,
     NavBarComponent,
+    LandingComponent,
   ],
   imports: [
     BrowserModule,

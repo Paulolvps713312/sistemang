@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, RequestOptions, Headers } from '@angular/http';
-import { Router } from "@angular/router";
+import { Router } from '@angular/router';
 
 import { Observable } from 'rxjs';
 
@@ -23,19 +23,19 @@ export class LoginService {
 
             this.afAuth.auth.signInWithEmailAndPassword(mail, password).then((user) => {
 
-                localStorage['token'] = mail;
-                this.router.navigate(['']);
+                localStorage.token = mail;
+                this.router.navigate(['/painel']);
                 console.log(user);
 
             })
                 .catch((error) => {
                     console.log(error);
-                    this.router.navigate(['/login']);
+                    this.router.navigate(['/entrar']);
                 });
         })
             .catch((error) => {
                 console.log(error);
-                this.router.navigate(['/login']);
+                this.router.navigate(['/entrar']);
             });
     }
 
